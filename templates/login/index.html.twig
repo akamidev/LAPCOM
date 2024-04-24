@@ -1,20 +1,26 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello LoginController!{% endblock %}
-
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<div class="container my-5">
+    <h1>Connexion</h1>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    {% if error %}
+        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>C:/Users/midoa/LapCom/src/Controller/LoginController.php</code></li>
-        <li>Your template at <code>C:/Users/midoa/LapCom/templates/login/index.html.twig</code></li>
-    </ul>
+    <form action="{{ path('app_login') }}" method="post">
+        <label for="username">Votre email</label>
+        <input class="form-control" type="text" id="username" name="_username" value="{{ last_username }}">
+
+        <label for="password mt-3">Votre mot de passe </label>
+        <input  class="form-control" type="password" id="password" name="_password">
+
+        {# If you want to control the URL the user is redirected to on success#}
+        <input type="hidden" name="_target_path" value="{{ path('app_account') }}"> 
+
+        <button type="submit" class= "btn btn-success mt-3">Me connecter</button>
+    </form>
+    <br/>
+    Vous n'avez pas de compte ? <a href="{{ path('app_register') }}">Inscrivez-vous</a>
 </div>
 {% endblock %}

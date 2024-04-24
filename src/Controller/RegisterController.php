@@ -26,8 +26,15 @@ class RegisterController extends AbstractController
             // dd($user); // return les datas du formulaire
             // dd($form->getData()); // return les datas du formulaire
 
+
             $entityManager->persist($user); // figer les données
             $entityManager->flush(); // enregistrer les données en BDD
+            $this->addFlash(
+                'success',
+                'Votre compte a bien été créé, veuillez vous connecter.'
+            );
+
+            return $this->redirectToRoute('app_login');
         }
         // si le formulaire est soumis alors tu enregistre les datas en BDD et tu envoie un messge de confirmation
 

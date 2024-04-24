@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>La Boutique Française - 100% Made in France</title>
+    <title>LAPCOM</title>
     <meta name="description" content="La boutique spécialisée dans la fabrication Made In France">
 
     <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
@@ -22,7 +22,7 @@
 <header data-bs-theme="dark">
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#" style="
+            <a class="navbar-brand" href="{{path('app_home')}}" style="
     font-family: 'LogoFont';
     src: url(data:font/ttf;base64,...) format('truetype');
 ">LAPCOM</a>
@@ -32,7 +32,7 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="{{path('app_home')}}">Accueil</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Link</a>
@@ -45,7 +45,11 @@
                     </li>
                 </ul>
                 <div class="speed-menu">
-                    <a href=""><i data-feather="user"></i></a>
+                    {% if app.user %}
+                    <a href="{{ path('app_account') }}"><i data-feather="user"></i> {{ app.user.firstname }}</a>
+                    {% else %}
+                    <a href="{{ path('app_login') }}"><i data-feather="user"></i></a>
+                    {% endif %}
                     <a href=""><i data-feather="shopping-cart"></i></a>
                 </div>
             </div>
@@ -55,7 +59,16 @@
 
 <main>
 
-   
+{# read and display all flash messages #}
+<div class="container">
+{% for label, messages in app.flashes %}
+    {% for message in messages %}
+        <div class="alert mt-4 alert-{{ label }}">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endfor %}
+</div>
 {% block body %}{% endblock %}
 
     <!-- FOOTER -->
