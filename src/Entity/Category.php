@@ -32,6 +32,11 @@ class Category
         $this->products = new ArrayCollection();
     }
 
+// appel a choicefield uniquement en chaine de caractéer 
+    public function __toString()  
+    {
+        return $this->name;
+    }
     public function getId(): ?int
     {
         return $this->id;
