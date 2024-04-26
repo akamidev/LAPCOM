@@ -100,6 +100,11 @@ class Product
         return $this;
     }
 
+    public function getPriceWt(): ?float
+    {
+        return $this->price * (1 + $this->tva / 100);
+    }
+    
     public function getTva(): ?float
     {
         return $this->tva;
