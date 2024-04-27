@@ -3,16 +3,60 @@
 {% block body %}
 
 	<div class="container my-5">
-		<h1>Mon panier</h1>
+		<h1 class="mb-5">Mon panier</h1>
 
-		<div class="row">
+		<table class=" table table-bordered">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col">Produit</th>
+					<th scope="col">Nom</th>
+					<th scope="col">Prix unitaire</th>
+					<th scope="col">Quantité</th>
+					<th scope="col">Total</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for product in cart %}
+					<tr>
+						<td class="text-center">
+							<div class="p-1">
+								<img src="/uploads/{{product.object.illustration}}" alt="{{product.object.name}}" class="img-fluid" style="width: 50px; height: 50px;">
+							</div>
+						</td>
+						<td class="text-center">
+							<strong>{{product.object.name}}</strong>
+						</td>
+						<td class="text-center">
+							{{ product.object.pricewt | price }}
+						</td>
+						<td class="text-center">
+
+							<a href="{{ path('app_cart_decrease', { id : product.object.id } ) }}" style="color: red; font-size: 20px;">
+								<strong>-</strong>
+							</a>
+							<span class="badge text-bg-secondary">
+								x
+								{{product.qty}}</span>
+							<a href="{{ path('app_cart_add', { id : product.object.id } ) }}" style="color: green; font-size: 20px;">
+								<strong>+</strong>
+							</a>
+
+						</td>
+						<td class="text-center">
+							<strong>{{ (product.qty * product.object.pricewt) | price }}</strong>
+						</td>
+					</tr>
+				{% endfor %}
+
+			</tbody>
+		</table>
+		<a href="{{ path('app_cart_remove') }}" class="small d-block mt-3 ">Vider le panier</a>
+		<div class="row mt-5">
 			<div class="col-md-8">
-				Liste de mes produits
-				{{dump (cart)}}
+				<h2>Récap de mon produits</h2>
+				<!-- Ajoutez ici le récapitulatif de vos produits -->
 			</div>
-			<div class="col-md-4">
-        Récap de mon produits    
-            </div>
 		</div>
+	</div>
 
-	{% endblock %}
+{% endblock %}
