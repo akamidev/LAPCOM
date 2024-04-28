@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
 
     <link href= "{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     
 
     <!-- Custom styles for this template -->
@@ -47,7 +48,11 @@
                     {% else %}
                     <a href="{{ path('app_login') }}"><i data-feather="user"></i></a>
                     {% endif %}
-                    <a href="{{ path('app_cart') }}"><i data-feather="shopping-cart"></i></a>
+                    <a href="{{ path('app_cart') }}">
+                    <i data-feather="shopping-cart">
+                    </i>
+                    <span class="badge text-bg-light">{{ fullCartQuantity }}</span>
+                    </a>
                 </div>
             </div>
         </div>
