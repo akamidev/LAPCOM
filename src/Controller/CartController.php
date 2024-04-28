@@ -16,7 +16,8 @@ class CartController extends AbstractController
     {
         return $this->render('cart/index.html.twig', [
 
-            'cart' => $cart->getCart()
+            'cart' => $cart->getCart(),
+            'totalwt' => $cart->getTotalWt()
         ]);
     }
 
@@ -57,6 +58,11 @@ class CartController extends AbstractController
     {
         $cart->remove();
 
+        $this->addFlash(
+            'success',
+            'Votre panier a bien été vidé.'
+        );
+        
         return $this->redirectToRoute('app_home');
     }
 }
