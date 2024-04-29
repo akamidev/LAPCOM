@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container my-5">
+    <h1 class="mb-4">Espace membre</h1>
+
+    <div class="row">
+        <div class="col-md-3">
+            {% include 'account/_menu.html.twig' %}
+        </div>
+        <div class="col-md-9">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h5>Mes adresses</h5>
+                <a href="{{ path('app_account_address_form') }}" class="btn btn-secondary btn-sm">Ajouter une adresse</a>
+            </div>
+{% if app.user.addresses | length == 0 %}
+
+<p>Vous n'avez pas encore enregistré de nouvelle adresses</p>
+
+{% else %}
+<div class="row">
+                {% for address in app.user.addresses %}
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ address.firstname }} {{ address.lastname }}</h5>
+                            <p class="card-text">
+                                <i class="fas fa-map-marker-alt"></i> {{ address.address }}<br>
+                                <i class="fas fa-city"></i> {{ address.postal }} {{ address.city }}<br>
+                                <i class="fas fa-globe"></i> {{ address.country }}<br>
+                                <i class="fas fa-phone"></i> {{ address.phone }}<br>
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="{{ path('app_account_address_form', { id: address.id } )}}" class="btn btn-secondary btn-sm">Editer</a>
+                            <a href="{{ path('app_account_address_delete', { id: address.id } )}}" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette adresse ?');" " class="btn btn-danger btn-sm">Supprimée</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+{% endif %}
+            
+        </div>
+    </div>
+</div>
+{% endblock %}
