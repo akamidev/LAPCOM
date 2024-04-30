@@ -1,4 +1,7 @@
 # Projet E-commerce LapCom
+![E-Commerce](https://img.shields.io/badge/E--Commerce-LapCom-blue)
+![Symfony](https://img.shields.io/badge/Powered_by-Symfony-brightgreen)
+
 
 
 ## Présentation du Projet
@@ -34,6 +37,21 @@ Le développement du projet est divisé en plusieurs phases :
 
 ## Conclusion
 Ce projet n'est pas seulement une tâche académique; c'est une chance de laisser une empreinte significative dans le secteur professionnel, de démontrer mes compétences en tant que développeur full-stack, et de contribuer au succès de LapCom dans l'ère numérique.
+## Comment démarrer
+
+Pour commencer à utiliser ce projet, vous devez d'abord cloner le dépôt sur votre machine locale. Ensuite, suivez les étapes ci-dessous pour installer les dépendances nécessaires et démarrer le serveur.
+
+1. **Cloner le dépôt** :
+   ```bash
+   git clone https://github.com/yourusername/yourprojectname.git
+   cd yourprojectname  
+  2. **Installer les dépendances** :
+     ```bash
+     composer install
+   
+  3. **Démarrer le serveur Symfony** :
+     ```bash
+     symfony server:start
 
 ## Comment Contribuer
 
@@ -46,4 +64,4 @@ Pour contribuer à ce projet, veuillez suivre les instructions suivantes :
 5. **Ouvrez une Pull Request** : Allez sur GitHub, naviguez jusqu'à votre branche, et cliquez sur 'New Pull Request'. Fournissez une description détaillée de ce que fait votre Pull Request et pourquoi elle est nécessaire.
 
 ---
-Pour toute question ou suggestion, n'hésitez pas à me contacter via [mon email](akamimehdi.dev@gmail.com) ou visiter [notre site web](https://akamimehdi.netlify.app/).
+Pour toute question ou suggestion, n'hésitez pas à me contacter via [mon email](akamimehdi.dev@gmail.com) ou visiter [mon portfolio](https://akamimehdi.netlify.app/).
