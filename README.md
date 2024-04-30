@@ -36,12 +36,14 @@ Le développement du projet est divisé en plusieurs phases :
 Ce projet n'est pas seulement une tâche académique; c'est une chance de laisser une empreinte significative dans le secteur professionnel, de démontrer mes compétences en tant que développeur full-stack, et de contribuer au succès de LapCom dans l'ère numérique.
 
 ## Comment Contribuer
+
 Pour contribuer à ce projet, veuillez suivre les instructions suivantes :
-1. Fork le repo
-2. Créez votre branche de fonctionnalité (`git checkout -b feature/AmazingFeature`)
-3. Commit vos changements (`git commit -m 'Add some AmazingFeature'`)
-4. Push à la branche (`git push origin feature/AmazingFeature`)
-5. Ouvrez une Pull Request
+
+1. **Fork le repo** : Cela vous permet de travailler sur votre propre copie du projet.
+2. **Créez votre branche de fonctionnalité** : Utilisez `git checkout -b feature/nom_de_la_fonctionnalité` pour commencer à travailler sur une nouvelle fonctionnalité ou correction. Choisissez un nom descriptif pour la branche.
+3. **Commit vos changements** : Faites des commits clairs et descriptifs, par exemple `git commit -m 'Add search functionality to product page'`.
+4. **Push à la branche** : Après avoir terminé vos modifications, faites un push de votre branche avec `git push origin feature/nom_de_la_fonctionnalité`.
+5. **Ouvrez une Pull Request** : Allez sur GitHub, naviguez jusqu'à votre branche, et cliquez sur 'New Pull Request'. Fournissez une description détaillée de ce que fait votre Pull Request et pourquoi elle est nécessaire.
 
 ---
 Pour toute question ou suggestion, n'hésitez pas à me contacter via [mon email](akamimehdi.dev@gmail.com) ou visiter [notre site web](https://akamimehdi.netlify.app/).
