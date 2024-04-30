@@ -25,10 +25,10 @@
 				<div class="container-fluid">
 					<a class="navbar-brand" href="{{ path('app_home') }}">
 						<img src="{{ asset('uploads/LOGOLAPCOM.jpg') }}" alt="Logo LAPCOM" style="
-						        height: 50px;  /* Ajustez la hauteur selon vos besoins */
-						        width: auto;
-                                border-radius: 30%;
-						    ">
+																														        height: 50px;  /* Ajustez la hauteur selon vos besoins */
+																														        width: auto;
+																								                                border-radius: 30%;
+																														    ">
 					</a>
 					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
@@ -78,16 +78,18 @@
 				{% endfor %}
 			</div>
 			{% block body %}{% endblock %}
-
-			<!-- FOOTER -->
-			<footer class="container">
-				<p>&copy; 2024 LAPCOM La Boutique Informatique
-					<a href="#">CGV</a>
-					&middot;
-					<a href="#">CGU</a>
-				</p>
-			</footer>
 		</main>
+		<!-- FOOTER -->
+		<footer class="footer mt-auto py-3 text-center bg-dark text-light">
+			<div class="container">
+				<span class="text-light">© 2024 LAPCOM La Boutique Informatique |
+					<a href="#" class="text-light">CGV</a>
+					·
+					<a href="#" class="text-light">CGU</a>
+				</span>
+			</div>
+		</footer>
+
 
 		<script src="{{ asset('assets/js/bootstrap.bundle.min.js')}}"></script>
 		<script src="{{asset('assets/js/global.js')}}"></script>
