@@ -19,6 +19,10 @@ class Order
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $createdAt = null;
+// 1/en attende de paiement 
+// 2/Paiement validé 
+// 3/expidié
+
 
     #[ORM\Column]
     private ?int $state = null;
@@ -35,7 +39,7 @@ class Order
     /**
      * @var Collection<int, OrderDetail>
      */
-    #[ORM\OneToMany(targetEntity: OrderDetail::class, mappedBy: 'myOrder')]
+    #[ORM\OneToMany(targetEntity: OrderDetail::class, mappedBy: 'myOrder', cascade: ['persist'])]
     private Collection $orderDetails;
 
     public function __construct()
