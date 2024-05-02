@@ -3,6 +3,7 @@
 namespace App\Controller\Account;
 
 
+use App\Classe\Cart;
 use App\Entity\Address;
 use App\Form\AddressUserType;
 use App\Repository\AddressRepository;
@@ -56,11 +57,11 @@ class AddressController extends AbstractController
 
     #[Route('/compte/adresse/ajouter/{id}', name: 'app_account_address_form', defaults: ['id' => null])]
 
-    public function form(Request $request, $id, AddressRepository $addressRepository): Response
+    public function form(Request $request, $id, AddressRepository $addressRepository, Cart $cart): Response
     {
         if ($id) {
             $address = $addressRepository->findOneById($id);
-            if (!$address or $address->getUser() != $this->getUser()) {
+            if (!$address OR $address->getUser() != $this->getUser()) {
 
                 return $this->redirectToRoute('app_account_addresses');
             }
@@ -73,18 +74,27 @@ class AddressController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
             $this->entityManager->persist($address);
+
             $this->entityManager->flush();
+
             $this->addFlash('success', 'Votre adresse a bien été ajoutée');
 
+            if ($cart->fullQuantity() > 0) {
+
+                return $this->redirectToRoute('app_order');
+            }
+
+              
             return $this->redirectToRoute('app_account_addresses');
+
         }
+            
 
-        // Créez le formulaire avec les données de l'adresse après avoir géré la requête du formulaire
-        $form = $this->createForm(AddressUserType::class, $address);
-
-        return $this->render('account/address/form.html.twig', [
-            'addressForm' => $form->createView()
-        ]);
+            return $this->render('account/address/form.html.twig', [
+                'addressForm' => $form
+            ]);
+        
     }
 }
