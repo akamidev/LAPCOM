@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use Stripe\Stripe;
+use App\Classe\Cart;
 use Stripe\Checkout\Session;
 use App\Repository\OrderRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -107,7 +108,7 @@ class PaymentController extends AbstractController
     }
 
     #[Route('/commande/merci/{stripe_session_id}', name: 'app_payment_success')]
-    public function success($stripe_session_id, OrderRepository $orderRepository, EntityManagerInterface $entityManager): Response
+    public function success($stripe_session_id, OrderRepository $orderRepository, EntityManagerInterface $entityManager, Cart $cart): Response
 
     {
      
@@ -122,8 +123,9 @@ class PaymentController extends AbstractController
         
             // dd($order);
         if ($order->getState() == 1){  // si la commande est en cours de traitement (state = 1
-            $order->setState(2);
-            $entityManager->flush();
+            $order->setState(2); // on passe la commande en cours de livraison (state = 2)
+            $cart->remove(); // on supprime le panier
+            $entityManager->flush(); // on enregistre la modification dans la base de données
         } 
         
             return $this->render('payment/success.html.twig', [
