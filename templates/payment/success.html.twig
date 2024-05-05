@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container my-5">
+    <div class="text-center">
+        <i class="fas fa-check-circle fa-5x text-success mb-3"></i>
+        <h1 class="mb-4">Merci pour votre commande</h1>
+        <p class="lead">Votre commande a été passée avec succès et est en cours de traitement. Vous recevrez bientôt un e-mail de confirmation avec les détails de votre commande.</p>
+        <a href="{{ path('app_home') }}" class="btn btn-primary mt-3">Retour à l'accueil</a>
+    </div>
+</div>
+{% endblock %}
