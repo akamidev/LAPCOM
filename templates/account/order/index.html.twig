@@ -9,7 +9,8 @@
         </div>
 
         <div class="col-md-9 mt-4">
-            <small><a href="{{ path('app_account') }}"><i class="fas fa-arrow-left"></i> Retour</a></small>
+            <small><a href="{{ path('app_account') }}"><i class="fas fa-arrow-left"></i> Retour</a> <a href="{{ path('app_invoice_customer', {id_order : order.id }) }}"><i class="fas fa-file-invoice"></i> Télécharger ma facture</a></small>
+            <small></small>
             <h5 class="mt-4">Ma commande n°{{ order.id }}</h5>
             <div>{{ include('admin/state.html.twig', { field: { 'value': order.state } }) }}</div>
             <span>Passée le : {{ order.createdAt|date('d/m/Y') }}</span>
