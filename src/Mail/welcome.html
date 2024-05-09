@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenue chez LAPCOM</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        .container { width: 80%; margin: 0 auto; padding: 20px; }
+        .header { background-color: #004aad; color: white; padding: 10px; text-align: center; }
+        .content { background-color: #f4f4f4; padding: 20px; }
+        .footer { background-color: #ddd; padding: 10px; text-align: center; }
+        .button {
+            background-color: #004aad; color: white; padding: 10px 20px;
+            text-decoration: none; border-radius: 5px; display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Bienvenue chez LAPCOM</h1>
+        </div>
+        <div class="content">
+            <p>Bonjour {{ firstname }} ,</p>
+            <p>Merci de vous être inscrit sur LAPCOM, votre nouvelle destination pour tout le matériel informatique.</p>
+            <p>Vous pouvez désormais passer commande et explorer notre gamme étendue de produits.</p>
+            <p>Pour confirmer votre adresse e-mail et activer votre compte, veuillez cliquer sur le lien ci-dessous :</p>
+            <a href="{{ confirmation_url }}" class="button">Confirmer mon adresse e-mail</a>
+            <p>Si vous n'avez pas créé de compte chez LAPCOM, veuillez ignorer cet e-mail ou nous contacter.</p>
+        </div>
+        <div class="footer">
+            Merci de choisir LAPCOM pour vos besoins informatiques. Nous sommes impatients de vous servir !
+        </div>
+    </div>
+</body>
+</html>
