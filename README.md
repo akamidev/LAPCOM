@@ -5,7 +5,8 @@
 
 
 ## Présentation du Projet
-Ce projet représente le point culminant de mon parcours académique en DWWM à PREPAVENIR FRANCONVILLE. J'ai conçu et développé un site e-commerce innovant pour LapCom, spécialisé dans la vente de matériel informatique. Ce projet vise à transformer LapCom en un acteur majeur du marché en ligne.
+Ce projet représente le point culminant de mon parcours académique en DWWM.
+J'ai conçu et développé un site e-commerce innovant pour LapCom, spécialisé dans la vente de matériel informatique. Ce projet vise à transformer LapCom en un acteur majeur du marché en ligne.
 
 ## Introduction
 LapCom ambitionne de devenir une plateforme de référence où chaque visiteur peut non seulement trouver le produit recherché mais aussi vivre une expérience d'achat mémorable. Mon objectif est de créer un site intuitif, avec un catalogue vaste, facile à gérer, qui fidélise la clientèle et offre des méthodes de paiement sécurisées et adaptées.
