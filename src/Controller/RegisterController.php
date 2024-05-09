@@ -2,13 +2,14 @@
 
 namespace App\Controller;
 
+use App\Classe\Mail;
 use App\Entity\User;
 use App\Form\RegisterUserType;
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class RegisterController extends AbstractController
 {
@@ -33,6 +34,16 @@ class RegisterController extends AbstractController
                 'success',
                 'Votre compte a bien été créé, veuillez vous connecter.'
             );
+//envoie d'un email de confirmation pour l'inscription
+            $mail = new Mail();
+            $vars = [
+
+                'firstname' => $user->getFirstname()
+            ];
+            $content = 'Bonjour, voici un email de test';
+            $mail->send($user->getEmail(), $user->getFirstname().' '.$user->getFirstname(), 'Bienvenue sur votre plateform LAPCOM ', "welcome.html", $vars );
+    
+    
 
             return $this->redirectToRoute('app_login');
         }
