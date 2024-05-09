@@ -1,0 +1,63 @@
+<!-- <!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation de commande</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        .container { width: 80%; margin: 0 auto; padding: 20px; }
+        .header { background-color: #004aad; color: white; padding: 10px; text-align: center; }
+        .content { background-color: #f4f4f4; padding: 20px; }
+        .footer { background-color: #ddd; padding: 10px; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>LAPCOM - Confirmation de votre commande</h1>
+        </div>
+        <div class="content">
+            <p>Bonjour {{ firstname }} ,</p>
+            <p>Merci pour votre commande sur LAPCOM, la boutique en ligne spécialisée en matériel informatique.</p>
+            <p>Voici les détails de votre commande :</p>
+            <ul>
+                <li><strong>Numéro de commande :</strong> {{ order.id }}</li>
+                <li><strong>Date de commande :</strong> {{ order.date|date('d/m/Y') }}</li>
+                <li><strong>Produits commandés :</strong> Voir la liste ci-dessous.</li>
+            </ul>
+            <table border="1" cellpadding="5" cellspacing="0" style="width: 100%;">
+                <thead>
+                    <tr style="background-color: #004aad; color: white;">
+                        <th>Produit</th>
+                        <th>Quantité</th>
+                        <th>Prix unitaire</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in order.items %}
+                    <tr>
+                        <td>{{ item.product.name }}</td>
+                        <td>{{ item.quantity }}</td>
+                        <td>{{ item.price | number_format(2, '.', ',') }} €</td>
+                        <td>{{ (item.quantity * item.price) | number_format(2, '.', ',') }} €</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <p><strong>Total de la commande :</strong> {{ order.total | number_format(2, '.', ',') }} €</p>
+            <p>Nous vous informerons dès que votre commande sera expédiée.</p>
+        </div>
+        <div class="footer">
+            Merci de choisir LAPCOM pour vos besoins informatiques.
+        </div>
+    </div>
+</body>
+</html>
+<p>Bonjour {{ firstname }},</p>
+<p>Merci pour votre commande. Voici les détails de votre commande :</p>
+<p>Numéro de commande : {{ order.id }}</p>
+<p>Total : {{ order.total }}</p>
+<p>Date : {{ order.createdAt|date('d/m/Y') }}</p>
+<p>Nous vous informerons lorsque votre commande sera expédiée.</p> -->
