@@ -9,7 +9,7 @@
     <span>Passée le : {{ order.createdAt|date('d/m/Y') }}</span><br />
     <span>Stripe session Id : {{ order.stripeSessionId }}</span>
 </div>
-
+<a href="{{ path('app_invoice_admin', {id_order : order.id }) }}"><i class="fas fa-file-invoice"></i> Imprimer facture</a></small>
 <div class="row my-4">
     <div class="col-md-6">
         <div class="card">
