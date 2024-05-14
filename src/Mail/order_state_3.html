@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation de Commande</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        .container { width: 80%; margin: 0 auto; padding: 20px; }
+        .header { background-color: #004aad; color: white; padding: 10px; text-align: center; }
+        .content { background-color: #f4f4f4; padding: 20px; }
+        .footer { background-color: #ddd; padding: 10px; text-align: center; }
+        .button {
+            background-color: #004aad; color: white; padding: 10px 20px;
+            text-decoration: none; border-radius: 5px; display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Confirmation de Commande</h1>
+        </div>
+        <div class="content">
+            <p>Bonjour {{ firstname }} ,</p>
+            <p>Merci de votre commande chez LAPCOM. Votre commande n° {{ id_order }} est en cours de préparation.</p>
+            <p>Notre équipe travaille à l'expédier aussi rapidement que possible et vous informera dès que celle-ci sera en route vers vous.</p>
+            <p>Si vous avez des questions ou besoin d'assistance, n'hésitez pas à contacter notre service client.</p>
+        </div>
+        <div class="footer">
+            Merci de choisir LAPCOM pour vos besoins informatiques. À bientôt !
+        </div>
+    </div>
+</body>
+</html>
