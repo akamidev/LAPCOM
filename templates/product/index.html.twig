@@ -1,20 +1,59 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-
 	<div class="container my-5">
-		<div class="row">
-			<div class="col-md-6">
-                <img src="/uploads/{{ product.illustration }}" class="img-fluid" alt="{{ product.name }}" width="500" height="300">
+		<div class="row justify-content-center">
+			<div class="col-md-6 position-relative d-flex justify-content-center align-items-center">
+				<img src="/uploads/{{ product.illustration }}" class="img-fluid" alt="{{ product.name }}">
 
 			</div>
 			<div class="col-md-6">
-            <small><i><a href="{{ path('app_category', {slug : product.category.slug }) }}">{{ product.category.name }}</a> > {{ product.name }}</i></small>
-            <h1>{{ product.name }}</h1>
-            <span class="d-block mb-3">{{ product.pricewt | price }}</span>
-            {{ product.description | raw }}
-            <a href="{{ path('app_cart_add', {id : product.id } ) }}" class="btn btn-primary btn-dark w-100">Ajouter au panier</a>
-            
-            </div>
+				<small>
+					<i>
+						<a href="{{ path('app_category', {slug : product.category.slug }) }}">{{ product.category.name }}</a>
+						>
+						{{ product.name }}</i>
+				</small>
+				<h1>{{ product.name }}</h1>
+				<span class="d-block mb-3">{{ product.pricewt | price }}</span>
+				{{ product.description | raw }}
+
+				<div class="d-flex align-items-center justify-content-between mt-3">
+					<a href="{{ path('app_cart_add', {id : product.id } ) }}" class="btn btn-primary btn-dark w-100">Ajouter au panier</a>
+
+					{% if app.user %}
+						{% if product in app.user.wishlists %}
+							<a class="wishlist-icon wishlist-icon-active" href="{{ path('app_account_wishlist_remove', {id: product.id }) }}" style="margin-left: 10px;">
+								<i data-feather="heart"></i>
+							</a>
+						{% else %}
+
+							<a class="wishlist-icon" href="{{ path('app_account_wishlist_add', {id: product.id }) }}" style="margin-left: 10px;">
+								<i data-feather="heart"></i>
+							</a>
+						{% endif %}
+
+					{% else %}
+
+						<a href="#collapseExample" class="heart-icon" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseExample">
+							<i data-feather="heart"></i>
+						</a>
+					{% endif %}
+				</div>
+			</div>
 		</div>
-	{% endblock %}
+		<div class="row justify-content-center">
+			<div class="col-md-12">
+				<div class="collapse" id="collapseExample">
+					<div class="card card-body">
+						Pour utiliser les avantages de la wishlist,
+						<a href="{{ path('app_login') }}">Connectez-vous<a/>
+							<a href="{{ path('app_register') }}">
+								ou créez votre compte client.</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
