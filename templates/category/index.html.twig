@@ -1,31 +1,25 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+<div class="container my-5">
+    <h1 class="mb-3">{{ category.name }}</h1>
+    <p>Cette catégorie contient {{ category.products | length }} produit(s).</p>
 
-	<div class="container my-5">
-		<h1>{{ category.name }}</h1>
-		<p>Cette catégorie contient
-			{{category.products | length}}
-			produit(s).
-		</p>
-
-		<div class="row">
-			{% for product in category.products %}
-				<div class="col-md-3 text-center">
-				<a href="{{ path('app_product', { slug : product.slug } ) }}" class="text-decoration-none">
-                <img src="/uploads/{{ product.illustration }}"  style="height: 300px; width: 300px;" class="img-fluid">
-				<span class="d-block fw-bold text-black">{{product.name}}</span>
-				</a>
-				<span class="d-block">{{product.pricewt | price }}</span>
-				
-				
-				</div>
-				
-			{% endfor %}
-
-		</div>
-
-
-	</div>
-
+    <div class="row g-3">
+        {% for product in category.products %}
+        <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="card h-100 shadow-sm">
+                <a href="{{ path('app_product', { slug : product.slug } ) }}" class="text-decoration-none">
+                    <img src="/uploads/{{ product.illustration }}" class="card-img-top img-fluid" alt="{{ product.name }}" style="border-radius: .5rem; object-fit: cover; height: 200px;">
+                </a>
+                <div class="card-body text-center">
+                    <h5 class="card-title mb-2">{{ product.name }}</h5>
+                    <p class="card-text">{{ product.pricewt | price }}</p>
+                    <a href="{{ path('app_product', { slug : product.slug } ) }}" class="btn btn-primary stretched-link">Voir Produit</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}
