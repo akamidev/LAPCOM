@@ -21,7 +21,9 @@ class Order
     private ?\DateTimeInterface $createdAt = null;
 // 1/en attende de paiement 
 // 2/Paiement validé 
-// 3/expidié
+// 3/encourde de préparation
+// 4/expidié
+// 5/annulé 
 
 
     #[ORM\Column]
@@ -105,10 +107,10 @@ public function getTotalTva()
         return $this->state;
     }
 
-    public function setState(int $state): static
+    public function setState(?int $state): static
     {
         $this->state = $state;
-
+    
         return $this;
     }
 
