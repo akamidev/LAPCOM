@@ -12,40 +12,33 @@
 			<div class="col-md-9">
 				<h5>Mes dernières commandes</h5>
 				{% if orders | length == 0 %}
-
 					<div class="alert alert-info">
 						Vous n'avez pas encore passé de commande.
 					</div>
-
 				{% else %}
-
-
-					<table class="table table-hover">
-						<thead>
-							<tr>
-								<th scope="col">N°</th>
-								<th scope="col">Date</th>
-								<th scope="col">Statut</th>
-								<th scope="col">Total T.T.C</th>
-								<th scope="col"></th>
-							</tr>
-						</thead>
-						<tbody>
-
-							{% for order in orders %}
-
-								<tr>
-                <td>{{ order.id }}</td>
-                <td>{{ order.createdAt |date('d/m/Y') }}</td>
-               <td class="state-cell">{{ include('admin/state.html.twig', { field: { 'value': order.state }}) }}</td>
-                <td>{{ order.totalWt |price }}</td>
-                <td><a href="{{ path('app_account_order', {'id_order' : order.id }) }}">Voir</td>
-                </tr>
-							{% endfor %}
-
-
-						</tbody>
-					</table>
+					<div class="row">
+						{% for order in orders %}
+							<div class="col-md-6 col-lg-4 mb-4">
+								<div class="card">
+									<div class="card-header">
+										Commande n°{{ order.id }}
+									</div>
+									<div class="card-body">
+										<h6 class="card-subtitle mb-2 text-muted">Date:
+											{{ order.createdAt | date('d/m/Y') }}</h6>
+										<p class="card-text">Statut:
+											{{ include('admin/state.html.twig', { field: { 'value': order.state }}) }}</p>
+										<p class="card-text">Total:
+											{{ order.totalWt | price }}</p>
+										<a href="{{ path('app_account_order', {'id_order': order.id}) }}" class="btn btn-primary">
+											<i class="fas fa-eye"></i>
+											Voir détails
+										</a>
+									</div>
+								</div>
+							</div>
+						{% endfor %}
+					</div>
 				{% endif %}
 			</div>
 		</div>
