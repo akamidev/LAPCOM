@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annulation de Commande</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        .container { width: 80%; margin: 0 auto; padding: 20px; }
+        .header { background-color: #004aad; color: white; padding: 10px; text-align: center; }
+        .content { background-color: #f4f4f4; padding: 20px; }
+        .footer { background-color: #ddd; padding: 10px; text-align: center; }
+        .button {
+            background-color: #004aad; color: white; padding: 10px 20px;
+            text-decoration: none; border-radius: 5px; display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Annulation de Votre Commande</h1>
+        </div>
+        <div class="content">
+            <p>Bonjour {{ firstname }} ,</p>
+            <p>Nous sommes désolés de vous informer que votre commande n° {{ id_order }}  a été annulée.</p>
+            <p>Si cette annulation est une erreur ou si vous n'avez pas demandé l'annulation, veuillez contacter notre service clientèle le plus rapidement possible pour résoudre ce problème.</p>
+            <p>Nous sommes à votre disposition pour toute question ou information supplémentaire.</p>
+        </div>
+        <div class="footer">
+            Nous vous prions de nous excuser pour tout inconvénient causé. Merci de votre compréhension et de votre confiance.
+        </div>
+    </div>
+</body>
+</html>
