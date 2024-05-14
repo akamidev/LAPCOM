@@ -40,8 +40,7 @@ class RegisterController extends AbstractController
 
                 'firstname' => $user->getFirstname()
             ];
-            $content = 'Bonjour, voici un email de test';
-            $mail->send($user->getEmail(), $user->getFirstname().' '.$user->getFirstname(), 'Bienvenue sur votre plateform LAPCOM ', "welcome.html", $vars );
+            $mail->send($user->getEmail(), $user->getFirstname().' '.$user->getLastname(), 'Bienvenue sur votre plateform LAPCOM ', "welcome.html", $vars );
     
     
 
