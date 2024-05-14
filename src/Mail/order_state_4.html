@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expédition de Commande</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        .container { width: 80%; margin: 0 auto; padding: 20px; }
+        .header { background-color: #004aad; color: white; padding: 10px; text-align: center; }
+        .content { background-color: #f4f4f4; padding: 20px; }
+        .footer { background-color: #ddd; padding: 10px; text-align: center; }
+        .button {
+            background-color: #004aad; color: white; padding: 10px 20px;
+            text-decoration: none; border-radius: 5px; display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Votre Commande a été Expédiée</h1>
+        </div>
+        <div class="content">
+            <p>Bonjour {{ firstname }} ,</p>
+            <p>Nous avons le plaisir de vous informer que votre commande n° {{ id_order }}  a été expédiée.</p>
+            <p>Vous pouvez suivre votre commande en utilisant le lien de suivi suivant :</p>
+            <a href="{{ tracking_url }}" class="button">Suivre ma commande</a>
+            <p>Merci de votre patience et de votre confiance. Nous espérons que vous serez satisfait de votre achat !</p>
+        </div>
+        <div class="footer">
+            Merci encore pour votre achat chez LAPCOM. Nous sommes à votre disposition pour toute question ou aide supplémentaire.
+        </div>
+    </div>
+</body>
+</html>
