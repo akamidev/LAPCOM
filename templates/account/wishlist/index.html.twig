@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container my-5">
+    <h1 class="mb-4">Espace membre</h1>
+
+    <div class="row">
+        <div class="col-md-3">
+            {% include 'account/_menu.html.twig' %}
+        </div>
+        <div class="col-md-9">
+            <h5>Ma liste de souhait ({{ app.user.wishlists|length }})</h5>
+
+            {% if app.user.wishlists|length > 0 %}
+                <div class="row">
+                    {% for product in app.user.wishlists %}
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 shadow-sm">
+                            <a href="{{ path('app_product', { slug : product.slug } ) }}" class="text-decoration-none">
+                                <img src="/uploads/{{ product.illustration }}" class="card-img-top img-fluid" style="border-radius: 8px; height: 300px; object-fit: cover;">
+                            </a>
+                            <div class="card-body text-center">
+                                <h6 class="card-title mb-2">{{ product.name }}</h6>
+                                <p class="card-text">{{ product.pricewt | price }}</p>
+								<a href="{{ path('app_account_wishlist_remove', { id : product.id }) }}" class="btn btn-danger btn-sm">Retirer de la liste</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <p>Vous n'avez pas de produit dans votre liste de souhait.</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
