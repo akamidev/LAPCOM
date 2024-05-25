@@ -27,4 +27,17 @@ class ProductController extends AbstractController
             'product' => $product,
         ]);
     }
+
+    public function show($slug, ProductRepository $productRepository): Response
+    {
+        $product = $productRepository->findOneBy(['slug' => $slug]);
+
+        if (!$product) {
+            throw $this->createNotFoundException('Produit non trouvé');
+        }
+
+        return $this->render('product/show.html.twig', [
+            'product' => $product,
+        ]);
+    }
 }
