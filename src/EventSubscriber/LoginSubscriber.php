@@ -22,10 +22,10 @@ class LoginSubscriber implements EventSubscriberInterface
         }
         public function onLogin()
         { 
-            // code php pour mettre à jouur la date de derniére connexion pour l'utilisateur connecté
+            // code php pour mettre à jour la date de derniére connexion pour l'utilisateur connecté
  
         $user = $this->security->getUser();
-        dd($user);
+        //dd($user);
         $user->setLastLoginAt(new DateTime());
         $this->em->flush();
 
