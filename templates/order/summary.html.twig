@@ -2,7 +2,7 @@
 
 {% block body %}
 
-	<div class="container my-5">
+	<div class="container mt-5">
 		<h1>Récapitulatif de ma commande</h1>
 
 		<div class="row">
@@ -65,7 +65,7 @@
 						<span class="fw-bold">Total commande</span>
                         <span>{{ (totalWt + choices.carriers.price) | price }}</span>
 					</div>
-					<a href="{{ path ('app_payment', {'id_order' : order.id })}}" class="btn btn-success w-100 mt-3">Payer</a>
+					<a href="{{ path ('app_payment', {'id_order' : order.id })}}" class="btn btn-success w-100 mb-5">Payer</a>
 				</div>
 			</div>
 		</div>
