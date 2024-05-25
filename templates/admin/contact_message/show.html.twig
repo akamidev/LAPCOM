@@ -1,0 +1,37 @@
+{% extends '@!EasyAdmin/layout.html.twig' %}
+
+{% block content_title %}
+    <h1 class="h2">Détails du message de contact</h1>
+{% endblock %}
+
+{% block main %}
+    <div class="container mt-5">
+        <div class="card shadow-lg">
+            <div class="card-header bg-info text-white">
+                <h4 class="mb-0">Informations du Contact</h4>
+            </div>
+            <div class="card-body">
+                <div class="row mb-3">
+                    <div class="col-sm-3 fw-bold">Nom :</div>
+                    <div class="col-sm-9">{{ entity.instance.name }}</div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-3 fw-bold">Email :</div>
+                    <div class="col-sm-9">{{ entity.instance.email }}</div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-3 fw-bold">Date de réception :</div>
+                    <div class="col-sm-9">{{ entity.instance.createdAt|date('d/m/Y H:i') }}</div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-3 fw-bold">Sujet :</div>
+                    <div class="col-sm-9">{{ entity.instance.subject }}</div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3 fw-bold">Message :</div>
+                    <div class="col-sm-9">{{ entity.instance.message }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
