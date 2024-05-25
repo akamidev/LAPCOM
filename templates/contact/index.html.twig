@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block body %}
+<h1 class="mt-5 text-center">Contactez-nous</h1>
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header text-center bg-primary text-white">
+                    Formulaire de Contact
+                </div>
+                <div class="card-body">
+                    {{ form_start(form, {'attr': {'class': 'form'}}) }}
+                        <div class="mb-3">
+                            {{ form_label(form.name, 'Nom', {'label_attr': {'class': 'form-label'}}) }}
+                            {{ form_widget(form.name, {'attr': {'class': 'form-control'}}) }}
+                        </div>
+                        <div class="mb-3">
+                            {{ form_label(form.email, 'Email', {'label_attr': {'class': 'form-label'}}) }}
+                            {{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+                        </div>
+                        <div class="mb-3">
+                            {{ form_label(form.subject, 'Sujet', {'label_attr': {'class': 'form-label'}}) }}
+                            {{ form_widget(form.subject, {'attr': {'class': 'form-control'}}) }}
+                        </div>
+                        <div class="mb-3">
+                            {{ form_label(form.message, 'Message', {'label_attr': {'class': 'form-label'}}) }}
+                            {{ form_widget(form.message, {'attr': {'class': 'form-control', 'rows': '5'}}) }}
+                        </div>
+                        <div class="d-grid">
+                            {{ form_widget(form.save, {'attr': {'class': 'btn btn-primary btn-block mb-4'}}) }}
+                        </div>
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
