@@ -3,20 +3,20 @@
 {% block body %}
 <div class="container my-5">
     <h1 class="mb-3">{{ category.name }}</h1>
-    <p>Cette catégorie contient {{ category.products | length }} produit(s).</p>
+    <p class="mb-4">Cette catégorie contient {{ category.products | length }} produit(s).</p>
 
     <div class="row g-3">
         {% for product in category.products %}
-        <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="col-sm-6 col-md-4 col-lg-3" style="margin-left: auto;">
             <div class="card h-100 shadow-sm">
-                <a href="{{ path('app_product', { slug : product.slug } ) }}" class="text-decoration-none">
-                    <img src="/uploads/{{ product.illustration }}" class="card-img-top img-fluid" alt="{{ product.name }}" style="border-radius: .5rem; object-fit: cover; height: 200px;">
-                </a>
-                <div class="card-body text-center">
-                    <h5 class="card-title mb-2">{{ product.name }}</h5>
-                    <p class="card-text">{{ product.pricewt | price }}</p>
-                    <a href="{{ path('app_product', { slug : product.slug } ) }}" class="btn btn-primary stretched-link">Voir Produit</a>
-                </div>
+            <a href="{{ path('app_product', { slug : product.slug } ) }}" class="text-decoration-none">
+                <img src="/uploads/{{ product.illustration }}" class="card-img-top img-fluid" alt="{{ product.name }}" style="border-radius: .5rem; object-fit: cover; height: 200px;">
+            </a>
+            <div class="card-body text-center">
+                <h5 class="card-title mb-5">{{ product.name }}</h5>
+            <span class="badge bg-gris  mb-5">Prix : {{ product.pricewt | price }}</span><br>
+            <a href="{{ path('app_product', { slug : product.slug } ) }}" class="btn btn-lg btn-dark d-inline-block mb-4">Voir Produit</a>
+            </div>
             </div>
         </div>
         {% endfor %}
