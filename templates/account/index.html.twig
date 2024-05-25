@@ -9,7 +9,7 @@
 				{% include 'account/_menu.html.twig' %}
 			</div>
 
-			<div class="col-md-9">
+			<div class="col-md-9 p-5">
 				<h5>Mes dernières commandes</h5>
 				{% if orders | length == 0 %}
 					<div class="alert alert-info">
@@ -30,7 +30,7 @@
 											{{ include('admin/state.html.twig', { field: { 'value': order.state }}) }}</p>
 										<p class="card-text">Total:
 											{{ order.totalWt | price }}</p>
-										<a href="{{ path('app_account_order', {'id_order': order.id}) }}" class="btn btn-primary">
+										<a href="{{ path('app_account_order', {'id_order': order.id}) }}" class="btn btn-secondary">
 											<i class="fas fa-eye"></i>
 											Voir détails
 										</a>
