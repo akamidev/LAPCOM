@@ -3,3 +3,18 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+privacy_policy:
+    path: /politique-de-confidentialite
+    controller: App\Controller\MainController::privacyPolicy
+
+consent_management:
+    path: /gestion-du-consentement
+    controller: App\Controller\MainController::consentManagement
+
+terms_of_service:
+    path: /conditions-generales-de-vente
+    controller: App\Controller\MainController::termsOfService
+
+terms_of_use:
+    path: /conditions-generales-dutilisation
+    controller: App\Controller\MainController::termsOfUse
