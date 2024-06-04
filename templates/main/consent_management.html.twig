@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gestion du Consentement{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <h1>Gestion du Consentement</h1>
+        <p>Chez LAPCOM, nous nous engageons à protéger votre vie privée et à garantir la transparence dans la manière dont nous collectons et utilisons vos données. Vous pouvez gérer vos préférences de consentement ci-dessous :</p>
+
+        <!-- Section de Gestion des Cookies -->
+        <div class="consent-section mt-5">
+            <h2>Préférences des Cookies</h2>
+            <p>Nous utilisons des cookies pour améliorer votre expérience sur notre site. Vous pouvez choisir les types de cookies que vous acceptez :</p>
+            <form>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="essentialCookies" checked disabled>
+                    <label class="form-check-label" for="essentialCookies">
+                        Cookies Essentiels (obligatoires)
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="analyticsCookies">
+                    <label class="form-check-label" for="analyticsCookies">
+                        Cookies d'Analyse
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="marketingCookies">
+                    <label class="form-check-label" for="marketingCookies">
+                        Cookies de Marketing
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary mt-3">Enregistrer les Préférences</button>
+            </form>
+        </div>
+
+        <!-- Section de Communication Marketing -->
+        <div class="consent-section mt-5">
+            <h2>Communications Marketing</h2>
+            <p>Nous aimerions vous envoyer des informations sur nos nouveaux produits et offres spéciales. Vous pouvez choisir de recevoir ces communications :</p>
+            <form>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="emailMarketing">
+                    <label class="form-check-label" for="emailMarketing">
+                        Recevoir des emails marketing
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="smsMarketing">
+                    <label class="form-check-label" for="smsMarketing">
+                        Recevoir des SMS marketing
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary mt-3">Enregistrer les Préférences</button>
+            </form>
+        </div>
+
+        <!-- Section de Partage des Données -->
+        <div class="consent-section mt-5">
+            <h2>Partage des Données</h2>
+            <p>Nous pouvons partager vos données avec des partenaires de confiance pour améliorer nos services. Vous pouvez choisir de permettre ou non ce partage :</p>
+            <form>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="dataSharing">
+                    <label class="form-check-label" for="dataSharing">
+                        Permettre le partage de mes données avec des partenaires
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary mt-5">Enregistrer les Préférences</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

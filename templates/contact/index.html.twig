@@ -7,9 +7,30 @@
 
 <div class="container mt-4">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <!-- Informations de contact -->
+        <div class="col-md-6">
+            <div class="contact-info mb-4">
+    {% if app.user %}
+    <h2>Bonjour, {{ app.user.firstname }} {{ app.user.lastname }}</h2>
+{% else %}
+    <h2>Bonjour</h2>
+{% endif %}
+              <p>Dites-nous qui vous êtes et comment nous pouvons vous aider. Nous vous répondrons dans les plus brefs délais.</p>
+                <div class="contact-details">
+                    <p><strong>Lapcom</strong></p>
+                    <p><i class="fas fa-phone"></i> (+33) 6 99 85 80 05</p>
+                    <p><i class="fas fa-envelope"></i> akamimehdi.dev@gmail.com</p>
+                    <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/akami-mehdi/" target="_blank">LinkedIn</a></p>
+                    <p><i class="fas fa-map-marker-alt"></i> 20 Rue Marcelin Berthelot, 95210 Saint-Gratien</p>
+                </div>
+            </div>
+            <!-- Carte Google Maps -->
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10476.961925274689!2d2.2746626719646907!3d48.96794648964092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66627e3fe4405%3A0x40b82c3688b2db0!2s95210%20Saint-Gratien!5e0!3m2!1sfr!2sfr!4v1717309503875!5m2!1sfr!2sfr" width="100%" height="310" style="border: 2px solid dark; border-radius: 10px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>        </div>
+        
+        <!-- Formulaire de contact -->
+        <div class="col-md-6 mt-5">
             <div class="card">
-                <div class="card-header text-center bg-primary text-white">
+                <div class="card-header text-center bg-dark text-wheit">
                     Formulaire de Contact
                 </div>
                 <div class="card-body">
@@ -31,7 +52,7 @@
                             {{ form_widget(form.message, {'attr': {'class': 'form-control', 'rows': '5'}}) }}
                         </div>
                         <div class="d-grid">
-                            {{ form_widget(form.save, {'attr': {'class': 'btn btn-primary btn-block mb-4'}}) }}
+                            {{ form_widget(form.save, {'attr': {'class': 'btn btn-dark btn-block mb-4'}}) }}
                         </div>
                     {{ form_end(form) }}
                 </div>
@@ -39,5 +60,4 @@
         </div>
     </div>
 </div>
-
 {% endblock %}

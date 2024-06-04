@@ -93,16 +93,22 @@
 
 		</main>
 
-		<!-- FOOTER -->
-		<footer class="footer mt-auto py-3 text-center bg-dark text-light">
-			<div class="container">
-				<span class="text-light">© 2024 LAPCOM La Boutique Informatique |
-					<a href="#" class="text-light">CGV</a>
-					·
-					<a href="#" class="text-light">CGU</a>
-				</span>
-			</div>
-		</footer>
+      
+
+	   <!-- FOOTER -->
+   <footer class="footer mt-auto py-3 text-center bg-dark text-light">
+    <div class="container">
+        <span class="text-light">
+            © 2024 LAPCOM La Boutique Informatique |
+            <a href="{{ path('terms_of_service') }}" class="text-light">CGV</a> ·
+            <a href="{{ path('terms_of_use') }}" class="text-light">CGU</a> ·
+            <a href="{{ path('privacy_policy') }}" class="text-light">Politique de Confidentialité</a> ·
+            <a href="{{ path('consent_management') }}" class="text-light">Gestion du Consentement</a> |
+            Vos données personnelles sont protégées conformément au RGPD.
+        </span>
+      
+    </div>
+</footer>
 
 
 		<script src="{{ asset('assets/js/bootstrap.bundle.min.js')}}"></script>
