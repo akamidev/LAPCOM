@@ -20,7 +20,7 @@ class ContactMessageType extends AbstractType
             ->add('email', EmailType::class)
             ->add('subject', TextType::class)
             ->add('message', TextareaType::class)
-            ->add('save', SubmitType::class, ['label' => 'Send Message']);
+            ->add('save', SubmitType::class, ['label' => 'Envoyer Message']);
     }
 
     public function configureOptions(OptionsResolver $resolver)
