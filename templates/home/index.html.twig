@@ -51,8 +51,8 @@
 
 	<!-- START THE FEATURETTES -->
 <div class="container mt-2 mb-5 d-flex justify-content-center">
-    {{ form_start(form, {'attr': {'class': 'input-group input-group-lg mb-3', 'id': 'searchForm'}}) }}
-        {{ form_widget(form.query, {'attr': {'class': 'form-control', 'placeholder': 'Rechercher...', 'id': 'searchInput'}}) }}
+    {{ form_start(form, {'attr': {'class': 'd-flex mb-3', 'id': 'searchForm'}}) }}
+        {{ form_widget(form.query, {'attr': {'class': 'form-control', 'placeholder': 'Rechercher...', 'id': 'searchInput', 'style': 'border: 1px solid black; margin-right: 16px;'}}) }}
         <div class="input-group-append ml-5">
             <button class="btn btn-secondary mr-5" type="submit">
                 <i class="fa fa-search"></i> Rechercher
