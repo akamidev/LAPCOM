@@ -1,0 +1,55 @@
+{# templates/partials/_navbar.html.twig #}
+
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark ml-auto">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{{ path('app_home') }}">
+            <img src="{{ asset('uploads/LOGOLAPCOM.jpg') }}" alt="Logo LAPCOM" width="100" height="50">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                <li class="nav-item">
+                    <a class="nav-link {{ app.request.get('_route') == 'app_home' ? 'active' : '' }}" href="{{ path('app_home') }}">Accueil</a>
+                </li>
+                {% for category in categories %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle {{ app.request.get('_route') == 'app_category' and app.request.get('_route_params')['slug'] == category.slug ? 'active' : '' }}" href="{{ path('app_category', {slug: category.slug}) }}" id="navbarDropdown{{ category.id }}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            {{ category.name }}
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown{{ category.id }}">
+                            {% for product in category.products %}
+                                <li><a class="dropdown-item" href="{{ path('app_product', {slug: product.slug}) }}">{{ product.name }}</a></li>
+                            {% endfor %}
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-center" href="{{ path('app_category', {slug: category.slug}) }}">Voir tous les produits</a></li>
+                        </ul>
+                    </li>
+                {% endfor %}
+                <li class="nav-item">
+                    <a class="nav-link {{ app.request.get('_route') == 'contact' ? 'active' : '' }}" href="{{ path('contact') }}">Contact</a>
+                </li>
+            </ul>
+            <div class="speed-menu">
+                {% if app.user %}
+                    <a href="{{ path('app_account') }}">
+                        <i data-feather="user"></i>
+                        {{ app.user.firstname }}
+                    </a>
+                    <a href="{{ path('app_account_wishlist') }}" class="heart-icons">
+                        <i data-feather="heart"></i>
+                    </a>
+                {% else %}
+                    <a href="{{ path('app_login') }}">
+                        <i data-feather="user"></i>
+                    </a>
+                {% endif %}
+                <a href="{{ path('app_cart') }}">
+                    <i data-feather="shopping-cart"></i>
+                    <span class="badge text-bg-light">{{ fullCartQuantity }}</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>

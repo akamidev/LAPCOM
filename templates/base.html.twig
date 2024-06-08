@@ -1,117 +1,93 @@
 <!doctype html>
 <html lang="fr" data-bs-theme="auto">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>LAPCOM</title>
-		<meta name="description" content="La boutique spécialisée dans la Vente des composants informatique">
-		<link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <title>LAPCOM</title>
+    <meta name="description" content="La boutique spécialisée dans la Vente des composants informatique">
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
 
-		<link
-		rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/carousel.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/custom.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/styles.css') }}" rel="stylesheet">
+    <style>
+        .navbar .dropdown-menu {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease, display 0.5s;
+            position: absolute;
+        }
 
+        .navbar .nav-item.dropdown:hover .dropdown-menu,
+        .navbar .nav-item.dropdown .dropdown-menu:hover {
+            display: block;
+            opacity: 1;
+        }
+    </style>
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+    <header data-bs-theme="dark">
+        {% include 'partials/_navbar.html.twig' %}
+    </header>
 
-		<!-- Custom styles for this template -->
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-		<link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
-		<link href="{{ asset('assets/css/carousel.css') }}" rel="stylesheet">
-		<link href="{{ asset('assets/css/custom.css') }}" rel="stylesheet">
-		<link href="{{ asset('assets/css/styles.css') }}" rel="stylesheet">
-		<script src="https://unpkg.com/feather-icons"></script>
-	</head>
-	<body>
+    <main>
+        <div class="container">
+            {% for label, messages in app.flashes %}
+                {% for message in messages %}
+                    <div class="alert mt-5 alert-{{ label }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        </div>
+        {% block body %}{% endblock %}
+    </main>
 
-		<header data-bs-theme="dark">
-			<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark  ml-auto">
-				<div class="d-flex justify-content-between align-items-center">
-					<a class="navbar-brand d-md-none" href="{{ path('app_home') }}">
-						<img src="{{ asset('uploads/LOGOLAPCOM.jpg') }}" alt="Logo LAPCOM" width="100" height="50">
-					</a>
-					<button class="navbar-toggler ml-200" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-						<span class="navbar-toggler-icon"></span>
-					</button>
-				</div>
-				<a class="navbar-brand d-none d-md-block" href="{{ path('app_home') }}">
-					<img src="{{ asset('uploads/LOGOLAPCOM.jpg') }}" alt="Logo LAPCOM" width="100" height="50">
-				</a>
-				<div class="container-fluid">
+    <footer class="footer mt-auto py-3 text-center bg-dark text-light">
+        <div class="container">
+            <span class="text-light">
+                © 2024 LAPCOM La Boutique Informatique |
+                <a href="{{ path('terms_of_service') }}" class="text-light">CGV</a> ·
+                <a href="{{ path('terms_of_use') }}" class="text-light">CGU</a> ·
+                <a href="{{ path('privacy_policy') }}" class="text-light">Politique de Confidentialité</a> ·
+                <a href="{{ path('consent_management') }}" class="text-light">Gestion du Consentement</a> |
+                Vos données personnelles sont protégées conformément au RGPD.
+            </span>
+        </div>
+    </footer>
 
-					<div class="collapse navbar-collapse" id="navbarCollapse">
-						<ul class="navbar-nav me-auto mb-2 mb-md-0">
-							<li class="nav-item">
-								<a class="nav-link {{ app.request.get('_route') == 'app_home' ? 'active' : '' }}" href="{{ path('app_home') }}">Accueil</a>
-							</li>
-							{% for category in allCategories %}
-								<li class="nav-item">
-									<a class="nav-link {{ app.request.get('_route') == 'app_category' and app.request.get('_route_params')['slug'] == category.slug ? 'active' : '' }}" href="{{ path('app_category', {slug : category.slug}) }}">{{ category.name }}</a>
-								</li>
-							{% endfor %}
-							<li class="nav-item">
-								<a class="nav-link {{ app.request.get('_route') == 'contact' ? 'active' : '' }}" href="{{ path('contact') }}">Contact</a>
-							</li>
-						</ul>
-						<div class="speed-menu">
-							{% if app.user %}
-								<a href="{{ path('app_account') }}">
-									<i data-feather="user"></i>
-									{{ app.user.firstname }}</a>
-								<a href="{{ path('app_account_wishlist') }}" class="heart-icons">
+    <script src="{{ asset('assets/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset('assets/js/global.js')}}"></script>
+    <script>
+	document.querySelector('.navbar-toggler').addEventListener('click', function() {
+    document.querySelector('.collapse').classList.toggle('show');
+});
+        document.addEventListener('DOMContentLoaded', function () {
+            const dropdowns = document.querySelectorAll('.nav-item.dropdown');
 
-									<i data-feather="heart"></i>
-								</a>
-							{% else %}
-								<a href="{{ path('app_login') }}">
-									<i data-feather="user"></i>
-								</a>
+            dropdowns.forEach(function (dropdown) {
+                dropdown.addEventListener('mouseenter', function () {
+                    const menu = this.querySelector('.dropdown-menu');
+                    menu.style.display = 'block';
+                    setTimeout(function () {
+                        menu.style.opacity = 1;
+                    }, 0);
+                });
 
-							{% endif %}
-
-							<a href="{{ path('app_cart') }}">
-								<i data-feather="shopping-cart"></i>
-								<span class="badge text-bg-light">{{ fullCartQuantity }}</span>
-							</a>
-						</div>
-					</div>
-				</div>
-			</nav>
-		</header>
-
-		<main>
-
-			{# read and display all flash messages #}
-			<div class="container">
-				{% for label, messages in app.flashes %}
-					{% for message in messages %}
-						<div class="alert mt-5 alert-{{ label }}">
-							{{ message }}
-						</div>
-					{% endfor %}
-				{% endfor %}
-			</div>
-			{% block body %}{% endblock %}
-
-		</main>
-
-      
-
-	   <!-- FOOTER -->
-   <footer class="footer mt-auto py-3 text-center bg-dark text-light">
-    <div class="container">
-        <span class="text-light">
-            © 2024 LAPCOM La Boutique Informatique |
-            <a href="{{ path('terms_of_service') }}" class="text-light">CGV</a> ·
-            <a href="{{ path('terms_of_use') }}" class="text-light">CGU</a> ·
-            <a href="{{ path('privacy_policy') }}" class="text-light">Politique de Confidentialité</a> ·
-            <a href="{{ path('consent_management') }}" class="text-light">Gestion du Consentement</a> |
-            Vos données personnelles sont protégées conformément au RGPD.
-        </span>
-      
-    </div>
-</footer>
-
-
-		<script src="{{ asset('assets/js/bootstrap.bundle.min.js')}}"></script>
-		<script src="{{asset('assets/js/global.js')}}"></script>
-	</body>
+                dropdown.addEventListener('mouseleave', function () {
+                    const menu = this.querySelector('.dropdown-menu');
+                    menu.style.opacity = 0;
+                    setTimeout(function () {
+                        menu.style.display = 'none';
+                    }, 500); // This should match the CSS transition duration
+                });
+            });
+        });
+    </script>
+</body>
 </html>
