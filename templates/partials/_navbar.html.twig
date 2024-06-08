@@ -39,6 +39,9 @@
                     </a>
                     <a href="{{ path('app_account_wishlist') }}" class="heart-icons">
                         <i data-feather="heart"></i>
+                        {% if app.user.wishlists|length > 0 %}
+                            <span class="wishlist-count">{{ app.user.wishlists|length }}</span>
+                        {% endif %}
                     </a>
                 {% else %}
                     <a href="{{ path('app_login') }}">
