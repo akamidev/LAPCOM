@@ -1,8 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-
-	<div class="container mt-5 unique-class">
+<div class="container my-5 responsive-margin">
 		<h1 class="mb-5">Mon panier</h1>
 
 		<table class="table table-hover">
@@ -30,18 +29,16 @@
 							{{ product.object.pricewt | price }}
 						</td>
 						<td class="text-center">
-
-							<a href="{{ path('app_cart_decrease', { id : product.object.id } ) }}" style="color: red; font-size: 20px;">
-								<strong>-</strong>
-							</a>
-							<span class="badge text-bg-secondary">
-								x
-								{{product.qty}}</span>
-							<a href="{{ path('app_cart_add', { id : product.object.id } ) }}" style="color: green; font-size: 20px;">
-								<strong>+</strong>
-							</a>
-
-						</td>
+    <a href="{{ path('app_cart_decrease', { id : product.object.id } ) }}" class="change-qty" style="color: red;">
+        <strong>-</strong>
+    </a>
+    <span class="badge text-bg-secondary">
+        x
+        {{product.qty}}</span>
+    <a href="{{ path('app_cart_add', { id : product.object.id } ) }}" class="change-qty" style="color: green;">
+        <strong>+</strong>
+    </a>
+</td>
 						<td class="text-center">
 							<strong>{{ (product.qty * product.object.pricewt) | price }}</strong>
 						</td>
@@ -73,7 +70,9 @@
 
 		</div>
 	</div>
-</div></div></div>
+</div>
+</div>
+</div>
 
 
 {% endblock %}
