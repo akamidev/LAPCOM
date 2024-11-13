@@ -89,27 +89,32 @@ symfony server:start
 Accédez à http://127.0.0.1:8000/ dans votre navigateur.
 
 ### 📝 Fonctionnalités
-🔍 Recherche de Produits : Filtrer les produits par nom, catégorie et prix.
-🛒 Panier d'Achat : Ajouter, modifier et supprimer des articles.
-💳 Paiement Sécurisé : Intégration avec Stripe pour des transactions sécurisées.
-📈 Dashboard Admin : Visualiser les statistiques et gérer le contenu.
+
+- 🔍 Recherche de Produits : Filtrer les produits par nom, catégorie et prix.
+- 🛒 Panier d'Achat : Ajouter, modifier et supprimer des articles.
+- 💳 Paiement Sécurisé : Intégration avec Stripe pour des transactions sécurisées.
+- 📈 Dashboard Admin : Visualiser les statistiques et gérer le contenu.
 
 ### 🚀 Améliorations Futures
-🤖 Tests Automatisés : Ajouter des tests avec PHPUnit et Selenium.
-🌐 Internationalisation : Support multi-langues pour une audience mondiale.
-📱 Application Mobile : Développer une application pour iOS et Android.
+
+- 🤖 Tests Automatisés : Ajouter des tests avec PHPUnit et Selenium.
+- 🌐 Internationalisation : Support multi-langues pour une audience mondiale.
+- 📱 Application Mobile : Développer une application pour iOS et Android.
 
 
 ### 🤝 Comment Contribuer
-Fork le Dépôt
-Créer une Branche (git checkout -b feature/ma-fonctionnalite)
-Committer vos Changements (git commit -m 'Ajout de nouvelle fonctionnalité')
-Pousser les Modifications (git push origin feature/ma-fonctionnalite)
-Ouvrir une Pull Request
+
+**Fork le Dépôt**
+
+- Créer une Branche (git checkout -b feature/ma-fonctionnalite)
+- Committer vos Changements (git commit -m 'Ajout de nouvelle fonctionnalité')
+- Pousser les Modifications (git push origin feature/ma-fonctionnalite)
+- Ouvrir une Pull Request
 
 
 ### 📄 Licence
-Ce projet est sous licence MIT. Consultez le fichier LICENSE pour plus de détails.
+
+- Ce projet est sous licence MIT. Consultez le fichier LICENSE pour plus de détails.
 
 
 ### 📬 Contact
