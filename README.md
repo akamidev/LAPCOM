@@ -8,8 +8,10 @@
 ---
 
 ## 🎥 **Démonstration**
-Cliquez ici pour visionner la vidéo de démonstration de mon projet **LAPCOM** :  
-👉 [Visionner la vidéo](https://akamidev.github.io/LAPCOM/)
+
+Cliquez sur l'image ci-dessous pour visionner la vidéo de démonstration de mon projet **LAPCOM** :
+
+[![Aperçu de la vidéo](./Photo1.png)](https://akamidev.github.io/LAPCOM/)
 
 ---
 
