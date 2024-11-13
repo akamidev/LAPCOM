@@ -104,14 +104,15 @@ Créer une Branche (git checkout -b feature/ma-fonctionnalite)
 Committer vos Changements (git commit -m 'Ajout de nouvelle fonctionnalité')
 Pousser les Modifications (git push origin feature/ma-fonctionnalite)
 Ouvrir une Pull Request
----
+
 
 ### 📄 Licence
 Ce projet est sous licence MIT. Consultez le fichier LICENSE pour plus de détails.
 
 
 ### 📬 Contact
-[LinkedIn](https://www.linkedin.com/in/akami-mehdi/)
-[Portfolio](https://akamimehdi.netlify.app/))
-Email : akamimehdi.dev@gmail.com
+- **[LinkedIn](https://www.linkedin.com/in/akami-mehdi/)**
+- **[Portfolio](https://akamimehdi.netlify.app/)**
+- **Email : akamimehdi.dev@gmail.com**
+  
 ⭐ N'oubliez pas de laisser une étoile sur ce projet si vous l'avez trouvé utile ! ⭐
