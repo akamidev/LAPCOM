@@ -1,70 +1,118 @@
-# Projet E-commerce LapCom
-![E-Commerce](https://img.shields.io/badge/E--Commerce-LapCom-blue)
-![Symfony](https://img.shields.io/badge/Powered_by-Symfony-brightgreen)
+# 🛒 Projet E-commerce **LapCom**
 
-## 🎥 Démonstration
-Cliquez ici pour visionner la vidéo de démonstration de mon projet LAPCOM :
-👉 [Visionner la vidéo](https://akamidev.github.io/LAPCOM/)
-
-## Présentation du Projet
-Ce projet représente le point culminant de mon parcours académique en DWWM.
-J'ai conçu et développé un site e-commerce innovant pour LapCom, spécialisé dans la vente de matériel informatique. Ce projet vise à transformer LapCom en un acteur majeur du marché en ligne.
-
-## Introduction
-LapCom ambitionne de devenir une plateforme de référence où chaque visiteur peut non seulement trouver le produit recherché mais aussi vivre une expérience d'achat mémorable. Mon objectif est de créer un site intuitif, avec un catalogue vaste, facile à gérer, qui fidélise la clientèle et offre des méthodes de paiement sécurisées et adaptées.
-
-## Contexte
-À ce jour, LapCom débute ses activités sans présence en ligne. Le défi est donc de créer de zéro la première interface e-commerce de l'entreprise, pour lui permettre de se développer dans l'univers numérique.
-
-## Architecture du Projet
-### Front Office
-- **Expérience Utilisateur:** Conception d'une interface utilisateur fluide avec navigation simplifiée à travers un catalogue de produits.
-- **Authentification:** Implémentation d'un système d'authentification pour des achats personnalisés.
-- **Paiement et Sécurité:** Intégration de processus de paiement sécurisés et d'un suivi transparent des commandes et des stocks.
-
-### Back Office
-- **Gestion de Contenu:** Outils pour la gestion des utilisateurs, des produits, des promotions et des stocks, assurant une mise à jour facile et une performance optimale du site.
-
-## Technologies Utilisées
-- **Framework:** Symfony
-- **Base de Données:** MySQL
-- **Serveur Web:** Apache
-- **Frontend:** JS, HTML5, CSS3, Bootstrap pour un design réactif et moderne.
-
-## Développement
-Le développement du projet est divisé en plusieurs phases :
-1. Analyse des besoins
-2. Conception du système
-3. Implémentation
-4. Documentation et déploiement
-
-## Conclusion
-Ce projet n'est pas seulement une tâche académique; c'est une chance de laisser une empreinte significative dans le secteur professionnel, de démontrer mes compétences en tant que développeur full-stack, et de contribuer au succès de LapCom dans l'ère numérique.
-## Comment démarrer
-
-Pour commencer à utiliser ce projet, vous devez d'abord cloner le dépôt sur votre machine locale. Ensuite, suivez les étapes ci-dessous pour installer les dépendances nécessaires et démarrer le serveur.
-
-1. **Cloner le dépôt** :
-   ```bash
-   git clone https://github.com/yourusername/yourprojectname.git
-   cd yourprojectname  
-  2. **Installer les dépendances** :
-     ```bash
-     composer install
-   
-  3. **Démarrer le serveur Symfony** :
-     ```bash
-     symfony server:start
-
-## Comment Contribuer
-
-Pour contribuer à ce projet, veuillez suivre les instructions suivantes :
-
-1. **Fork le repo** : Cela vous permet de travailler sur votre propre copie du projet.
-2. **Créez votre branche de fonctionnalité** : Utilisez `git checkout -b feature/nom_de_la_fonctionnalité` pour commencer à travailler sur une nouvelle fonctionnalité ou correction. Choisissez un nom descriptif pour la branche.
-3. **Commit vos changements** : Faites des commits clairs et descriptifs, par exemple `git commit -m 'Add search functionality to product page'`.
-4. **Push à la branche** : Après avoir terminé vos modifications, faites un push de votre branche avec `git push origin feature/nom_de_la_fonctionnalité`.
-5. **Ouvrez une Pull Request** : Allez sur GitHub, naviguez jusqu'à votre branche, et cliquez sur 'New Pull Request'. Fournissez une description détaillée de ce que fait votre Pull Request et pourquoi elle est nécessaire.
+![E-Commerce](https://img.shields.io/badge/E--Commerce-LapCom-blue?style=for-the-badge&logo=shopify)
+![Symfony](https://img.shields.io/badge/Powered_by-Symfony-brightgreen?style=for-the-badge&logo=symfony)
+![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge&logo=license)
+![Version](https://img.shields.io/badge/Version-1.0-lightgrey?style=for-the-badge&logo=github)
 
 ---
-Pour toute question ou suggestion, n'hésitez pas à me contacter via [mon email](akamimehdi.dev@gmail.com) ou visiter [mon portfolio](https://akamimehdi.netlify.app/).
+
+## 🎥 **Démonstration**
+Cliquez ici pour visionner la vidéo de démonstration de mon projet **LAPCOM** :  
+👉 [Visionner la vidéo](https://akamidev.github.io/LAPCOM/)
+
+---
+
+## 🌟 **Présentation du Projet**
+Ce projet représente le point culminant de mon parcours académique en **Développement Web et Web Mobile (DWWM)**.  
+J'ai conçu et développé un site e-commerce innovant pour **LapCom**, spécialisé dans la vente de matériel informatique. Ce projet vise à transformer **LapCom** en un acteur majeur du marché en ligne.
+
+---
+
+## 💡 **Introduction**
+**LapCom** ambitionne de devenir une plateforme de référence où chaque visiteur peut non seulement trouver le produit recherché mais aussi vivre une expérience d'achat mémorable. Mon objectif est de créer un site intuitif, avec un catalogue vaste et facile à gérer, qui fidélise la clientèle et offre des méthodes de paiement sécurisées et adaptées.
+
+---
+
+## 🏢 **Contexte**
+À ce jour, **LapCom** débute ses activités sans présence en ligne. Le défi est donc de créer de zéro la première interface e-commerce de l'entreprise, afin de lui permettre de se développer dans l'univers numérique.
+
+---
+
+## 🛠️ **Architecture du Projet**
+
+### **Front Office**
+- 🛍️ **Expérience Utilisateur :** Interface intuitive et navigation simplifiée.
+- 🔐 **Authentification :** Système sécurisé pour une expérience d'achat personnalisée.
+- 💳 **Paiement Sécurisé :** Intégration de paiements via **Stripe** et suivi des commandes.
+
+### **Back Office**
+- 🗃️ **Gestion de Contenu :** Administration des produits, utilisateurs et promotions.
+- 📦 **Gestion des Stocks :** Suivi en temps réel et mises à jour automatiques.
+
+---
+
+## 🛠️ **Technologies Utilisées**
+
+| Technologie | Description |
+|-------------|-------------|
+| ![Symfony](https://img.shields.io/badge/Symfony-Framework-000?style=for-the-badge&logo=symfony) | Backend puissant et sécurisé |
+| ![MySQL](https://img.shields.io/badge/Database-MySQL-blue?style=for-the-badge&logo=mysql) | Base de données relationnelle |
+| ![Apache](https://img.shields.io/badge/Server-Apache-red?style=for-the-badge&logo=apache) | Serveur web |
+| ![HTML5](https://img.shields.io/badge/HTML5-Frontend-orange?style=for-the-badge&logo=html5) | Structure des pages |
+| ![CSS3](https://img.shields.io/badge/CSS3-Styling-blue?style=for-the-badge&logo=css3) | Design responsive |
+| ![JavaScript](https://img.shields.io/badge/JavaScript-Frontend-yellow?style=for-the-badge&logo=javascript) | Interactivité et fonctionnalités |
+
+---
+
+## 📦 **Installation**
+
+Suivez ces étapes pour installer et lancer le projet localement :
+
+1. **Cloner le dépôt :**
+   ```bash
+   git clone https://github.com/akamidev/LAPCOM.git
+   cd LAPCOM
+
+2. **Installer les dépendances :**
+
+```bash
+composer install
+Configuration de la base de données :
+```
+
+```bash
+
+php bin/console doctrine:database:create
+php bin/console doctrine:schema:update --force
+```
+3. **Démarrer le serveur :**
+
+```bash
+
+symfony server:start
+
+```
+---
+Accédez à http://127.0.0.1:8000/ dans votre navigateur.
+---
+### 📝 Fonctionnalités
+🔍 Recherche de Produits : Filtrer les produits par nom, catégorie et prix.
+🛒 Panier d'Achat : Ajouter, modifier et supprimer des articles.
+💳 Paiement Sécurisé : Intégration avec Stripe pour des transactions sécurisées.
+📈 Dashboard Admin : Visualiser les statistiques et gérer le contenu.
+---
+### 🚀 Améliorations Futures
+🤖 Tests Automatisés : Ajouter des tests avec PHPUnit et Selenium.
+🌐 Internationalisation : Support multi-langues pour une audience mondiale.
+📱 Application Mobile : Développer une application pour iOS et Android.
+---
+
+### 🤝 Comment Contribuer
+Fork le Dépôt
+Créer une Branche (git checkout -b feature/ma-fonctionnalite)
+Committer vos Changements (git commit -m 'Ajout de nouvelle fonctionnalité')
+Pousser les Modifications (git push origin feature/ma-fonctionnalite)
+Ouvrir une Pull Request
+---
+
+### 📄 Licence
+Ce projet est sous licence MIT. Consultez le fichier LICENSE pour plus de détails.
+----
+
+### 📬 Contact
+[LinkedIn](https://www.linkedin.com/in/akami-mehdi/)
+[Portfolio](https://akamimehdi.netlify.app/))
+Email : akamimehdi.dev@gmail.com
+---
+⭐ N'oubliez pas de laisser une étoile sur ce projet si vous l'avez trouvé utile ! ⭐
