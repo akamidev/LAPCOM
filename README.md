@@ -11,7 +11,9 @@
 
 Cliquez sur l'image ci-dessous pour visionner la vidéo de démonstration de mon projet **LAPCOM** :
 
-[![Aperçu de la vidéo](./Photo1.png)](https://akamidev.github.io/LAPCOM/)
+<a href="https://akamidev.github.io/LAPCOM/">
+    <img src="./Photo1.png" alt="Aperçu de la vidéo" width="400">
+</a>
 
 ---
 
