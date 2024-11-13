@@ -47,11 +47,13 @@ J'ai conçu et développé un site e-commerce innovant pour **LapCom**, spécial
 | Technologie | Description |
 |-------------|-------------|
 | ![Symfony](https://img.shields.io/badge/Symfony-Framework-000?style=for-the-badge&logo=symfony) | Backend puissant et sécurisé |
+| ![Twig](https://img.shields.io/badge/Twig-Templating-green?style=for-the-badge&logo=twig) | Moteur de template pour une structure HTML claire et réutilisable |
 | ![MySQL](https://img.shields.io/badge/Database-MySQL-blue?style=for-the-badge&logo=mysql) | Base de données relationnelle |
 | ![Apache](https://img.shields.io/badge/Server-Apache-red?style=for-the-badge&logo=apache) | Serveur web |
 | ![HTML5](https://img.shields.io/badge/HTML5-Frontend-orange?style=for-the-badge&logo=html5) | Structure des pages |
 | ![CSS3](https://img.shields.io/badge/CSS3-Styling-blue?style=for-the-badge&logo=css3) | Design responsive |
 | ![JavaScript](https://img.shields.io/badge/JavaScript-Frontend-yellow?style=for-the-badge&logo=javascript) | Interactivité et fonctionnalités |
+| ![Bootstrap](https://img.shields.io/badge/Bootstrap-CSS_Framework-purple?style=for-the-badge&logo=bootstrap) | Framework CSS pour un design moderne et réactif |
 
 ---
 
