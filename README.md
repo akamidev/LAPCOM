@@ -3,7 +3,7 @@
 ![Symfony](https://img.shields.io/badge/Powered_by-Symfony-brightgreen)
 
 ## 🎥 Démonstration
-Cliquez ici pour visionner la vidéo de démonstration de l'automatisation du formulaire :
+Cliquez ici pour visionner la vidéo de démonstration de mon projet LAPCOM :
 👉 [Visionner la vidéo](https://akamidev.github.io/LAPCOM/)
 
 ## Présentation du Projet
