@@ -2,7 +2,9 @@
 ![E-Commerce](https://img.shields.io/badge/E--Commerce-LapCom-blue)
 ![Symfony](https://img.shields.io/badge/Powered_by-Symfony-brightgreen)
 
-
+## 🎥 Démonstration
+Cliquez ici pour visionner la vidéo de démonstration de l'automatisation du formulaire :
+👉 [Visionner la vidéo](https://akamidev.github.io/LAPCOM/)
 
 ## Présentation du Projet
 Ce projet représente le point culminant de mon parcours académique en DWWM.
